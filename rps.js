@@ -31,13 +31,13 @@ optionImages.forEach((image, index) => {
             let outcomes = {
                 RR: "Draw",
                 RP: "Cpu",
-                RS: "User",
+                RS: "You",
                 PP: "Draw",
-                PR: "User",
+                PR: "You",
                 PS: "Cpu",
                 SS: "Draw",
                 SR: "Cpu",
-                SP: "User",
+                SP: "You",
             };
             
             let outComeValue = outcomes[userValue + cpuValue];
