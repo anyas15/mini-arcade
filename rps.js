@@ -7,7 +7,7 @@ const gameContainer = document.querySelector(".container"),
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active");
-        userResult.src = cpuResult.src = "rock.png";
+        userResult.src = cpuResult.src = "images/rock.png";
         result.textContent = "Wait...";
         
         optionImages.forEach((image2, index2) => {
@@ -22,7 +22,7 @@ optionImages.forEach((image, index) => {
             userResult.src = imageSrc;
             
             let randomNumber = Math.floor(Math.random() * 3);
-            let cpuImages = ["rock.png", "paper.png", "scissor.png"];
+            let cpuImages = ["images/rock.png", "images/paper.png", "images/scissor.png"];
             cpuResult.src = cpuImages[randomNumber];
             
             let cpuValue = ["R", "P", "S"][randomNumber];
