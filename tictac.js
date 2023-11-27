@@ -4,6 +4,7 @@ var chooser = document.querySelector('form');
 var mark;
 var cells;
 var gameOver = false;
+var totalWins = 0;
 
 // add click listener to radio buttons
 function setPlayer() {
@@ -20,6 +21,7 @@ function playerMove() {
     this.textContent = mark;
     if (checkWinner()) {
       gameOver = true;
+      updateWinCount(mark);
       return; // Exit the function early if the game is won
     }
     switchMark();
@@ -102,6 +104,13 @@ function buildGrid() {
   cells = Array.from(grid.getElementsByTagName('li'));
 }
 
+function updateWinCount(winnerMark) {
+  if (winnerMark === mark) {
+    totalWins= totalWins+ 5;
+  // Display the updated win count
+  document.getElementById('winCount').textContent = 'Total Wins: ' + totalWins;
+}
+}
 var players = Array.from(document.querySelectorAll('input[name=player-choice]'));
 players.forEach(function (choice) {
   choice.addEventListener('click', setPlayer, false);
