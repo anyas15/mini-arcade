@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
 }
 
 body {
     background: #588157;
-    color: #344E41;
+    color: #CCD5AE;
 }
 
 header {
@@ -34,4 +34,33 @@ header {
 
 .navbar a:hover, .navbar a.active {
     color: #D4A373;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Poppins';
+    font-weight: 1500;
+    line-height: 1.2;
+    padding-bottom: 2%;
+}
+
+.home-content h3 {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+    color: #E9EDC9;
+    font-style: italic;
 }
