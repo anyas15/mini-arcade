@@ -1,3 +1,4 @@
+@import url("https://font.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 html {
     box-sizing: border-box;
   }
@@ -13,17 +14,23 @@ html {
 }
   body {
     background-color: #CCD5AE;
-    font-family: "Comfortaa", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
   
   h1 {
-    font-family: "Lobster", serif;
+    font-family: "Poppins", sans-serif;
   }
   
   .message {
     color: #FEFAE0;
     font-size: 1.5em;
     padding-bottom: 1em;
+  }
+  .reset {
+    width: 100px; 
+    height: 50px; 
+    font-size: 16px; 
+    margin-top: 60px;
   }
   
   form label {
@@ -48,6 +55,10 @@ html {
       opacity: 1;
       display: block;
       margin: 0 auto;
+    }
+    #winCount {
+      color: #FEFAE0; 
+      font-weight: bold;
     }
    
 
