@@ -7,6 +7,31 @@
   body {
     background-color: #588157;
   }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #FAEDCD;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #D4A373;
+}
+
   .container {
     font-size: 30px;
     background-color: #FEFAE0;
