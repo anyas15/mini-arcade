@@ -42,7 +42,7 @@ header {
 .wrapper{
   padding: 25px;
   border-radius: 10px;
-  background: #F8F8F8;
+  background: #fff;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .cards, .card, .view{
@@ -137,4 +137,16 @@ header {
   .card .back-view img{
     max-width: 35px;
   }
+}
+
+/* Add these styles to your CSS */
+.timer {
+  position: fixed;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  font-size: 18px; /* Adjust the font size as needed */
+  color: #ffffff; /* Adjust the text color as needed */
+  background-color: #000000; /* Adjust the background color as needed */
+  padding: 8px; /* Adjust the padding as needed */
+  border-radius: 5px; /* Adjust the border radius as needed */
 }
