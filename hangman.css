@@ -34,10 +34,10 @@ header {
 }
 
 .container {
-  font-size: 30px;
+  font-size: 25px;
   background-color: #FAEDCD;
   width: 90vw;
-  max-width: 35em;
+  max-width: 30em;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -57,7 +57,7 @@ header {
   margin: 1.2em 0 2.4em 0;
 }
 #options-container button {
-  font-size: 25px;
+  font-size: 20px;
   padding: 0.6em 1.2em;
   border: 3px solid #000000;
   background-color: #ffffff;
@@ -68,7 +68,7 @@ header {
 #options-container button:disabled {
   border: 3px solid #808080;
   color: #808080;
-  background-color: #efefef;
+  background-color: #FAEDCD;
 }
 #options-container button.active {
   background-color: #D4A373;
@@ -90,7 +90,7 @@ header {
   background-color: #ffffff;
 }
 .new-game-popup {
-  background-color: #ffffff;
+  background-color: #FAEDCD;
   position: absolute;
   left: 0;
   top: 0;
@@ -147,7 +147,7 @@ canvas {
   position: fixed;
   top: 20px;
   right: 10px;
-  font-size: 18px;
+  font-size: 20px;
   color: #000000;
   background-color: #D4A373;
   padding: 8px;
