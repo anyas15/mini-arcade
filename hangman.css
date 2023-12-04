@@ -1,9 +1,10 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
   body {
     background-color: #588157;
   }
@@ -24,7 +25,7 @@
     font-size: 18px;
     color: #FAEDCD;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     margin-left: 35px;
 }
 
