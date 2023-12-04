@@ -1,5 +1,3 @@
-// script.js
-
 // retrieve the total points from local storage
 function getTotalPoints() {
     return parseInt(localStorage.getItem('totalPoints')) || 0;

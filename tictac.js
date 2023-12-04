@@ -22,7 +22,7 @@ function playerMove() {
     if (checkWinner()) {
       gameOver = true;
       updateTotalPoints(mark);
-      return; // Exit the function early if the game is won
+      return; // exit function early if the game is won
     }
     switchMark();
     computerMove();
@@ -38,7 +38,7 @@ function computerMove() {
       emptyCells[random].textContent = mark;
       if (checkWinner()) {
         gameOver = true;
-        return; // Exit the function early if the game is won
+        return; // exit function early if the game is won
       }
       switchMark();
     }
