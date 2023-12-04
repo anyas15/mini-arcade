@@ -5,6 +5,7 @@ const newGameContainer = document.getElementById("new-game-container");
 const newGameButton = document.getElementById("new-game-button");
 const canvas = document.getElementById("canvas");
 const resultText = document.getElementById("result-text");
+const scoreDisplay = document.getElementById("points");
 
 let options = {
   fruits: [
@@ -16,7 +17,6 @@ let options = {
     "Fig",
     "Grape",
     "Honeydew",
-    "Imbe",
     "Jackfruit",
     "Kiwi",
     "Lemon",
@@ -24,14 +24,10 @@ let options = {
     "Nectarine",
     "Orange",
     "Papaya",
-    "Quince",
     "Raspberry",
     "Strawberry",
     "Tangerine",
-    "Ububese",
-    "Voavanga",
     "Watermelon",
-    "Ximenia",
     "Yuzu",
     "Zucchini"
   ],
@@ -59,7 +55,6 @@ let options = {
     "Urchin",
     "Vulture",
     "Walrus",
-    "Xenopus",
     "Yak",
     "Zebra"
 ],
@@ -96,6 +91,12 @@ let winCount = 0;
 let count = 0;
 
 let chosenWord = "";
+let points = 0;
+
+const playGame = (pointsEarned) => {
+  points += pointsEarned;
+  scoreDisplay.innerText = `Points: ${points}`;
+};
 
 const displayOptions = () => {
   optionsContainer.innerHTML += `<h3>Please Select A Category</h3>`;
@@ -163,7 +164,8 @@ const initializer = () => {
             dashes[index].innerText = char;
             winCount += 1;
             if (winCount == charArray.length) {
-              resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+              resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p><p>You have won 5 points!</p>`;
+              playGame(5);
               blocker();
             }
           }
