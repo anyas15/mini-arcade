@@ -4,7 +4,7 @@ var chooser = document.querySelector('form');
 var mark;
 var cells;
 var gameOver = false;
-var totalWins = 0;
+var totalWins = parseInt(localStorage.getItem('totalPoints')) || 0;;
 
 // add click listener to radio buttons
 function setPlayer() {
@@ -84,13 +84,14 @@ function checkRow(id1, id2, id3) {
 function resetGrid() {
   mark = 'X';
   cells.forEach(function (cell) {
-    cell.textContent = '';
-    cell.classList.remove('winner');
+      cell.textContent = '';
+      cell.classList.remove('winner');
   });
   msg.textContent = 'Choose your player:';
   chooser.classList.remove('game-on');
   grid.innerHTML = '';
   gameOver = false;
+  document.getElementById('winCount').textContent = 'Total Points: ' + totalWins;
 }
 
 // build the grid
@@ -105,12 +106,17 @@ function buildGrid() {
 }
 
 function updateTotalPoints(winnerMark) {
-  if (winnerMark === mark) {
-    totalWins= totalWins+ 5;
-  // Display the updated win count
-  document.getElementById('winCount').textContent = 'Total Points: ' + totalWins;
+    if (winnerMark === mark) {
+        totalWins += 5;
+        updateAndStorePoints(totalWins);
+    }
 }
+
+function updateAndStorePoints(points) {
+    localStorage.setItem('totalPoints', points);
+    document.getElementById('winCount').textContent = 'Total Points: ' + points;
 }
+
 var players = Array.from(document.querySelectorAll('input[name=player-choice]'));
 players.forEach(function (choice) {
   choice.addEventListener('click', setPlayer, false);
@@ -121,3 +127,4 @@ resetButton.addEventListener('click', function (e) {
   e.preventDefault();
   resetGrid();
 });
+
