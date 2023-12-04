@@ -17,15 +17,15 @@ function updatePlantImage() {
     const plantImage = document.getElementById('plantImage');
 
     if (totalPoints >= 5) {
-        plantImage.src = 'images\plantgrow_5.png'; 
+        plantImage.src = 'images/plantgrow_5.png'; 
     } else if (totalPoints >= 4) {
-        plantImage.src = 'images\plantgrow_4.png'; 
+        plantImage.src = 'images/plantgrow_4.png'; 
     } else if (totalPoints >= 3) {
-        plantImage.src = 'images\plantgrow_3.png'; 
+        plantImage.src = 'images/plantgrow_3.png'; 
     } else if (totalPoints >= 2) {
-        plantImage.src = 'images\plantgrow_2.png'; 
+        plantImage.src = 'images/plantgrow_2.png'; 
     } else {
-        plantImage.src = 'images\plantgrow_1.png'; 
+        plantImage.src = 'images/plantgrow_1.png'; 
     }
 }
 
@@ -41,7 +41,7 @@ function levelUpPlant() {
         // call update function to update the plant image
         updatePlantImage();
     } else {
-        alert('Not enough points to level up the plant!');
+        alert('Play more games to earn enough points to grow your plant!');
     }
 }
 

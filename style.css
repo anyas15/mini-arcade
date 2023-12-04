@@ -9,6 +9,11 @@
 body {
     background: #588157;
     color: #CCD5AE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 header {
@@ -44,8 +49,8 @@ header {
     padding: 0 10%;
 }
 
-.home-content {
-    max-width: 600px;
+.home-content, .plant-growth {
+    max-width: 48%;
 }
 
 .home-content h1 {
@@ -53,37 +58,60 @@ header {
     font-size: 48px;
     font-weight: 700;
     font-family: 'Poppins';
-    font-weight: 1500;
+    font-weight: 1800;
     line-height: 1.2;
     padding-bottom: 2%;
 }
 
 .home-content h3 {
     position: relative;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: #E9EDC9;
     font-style: italic;
 }
 
-#plantGrowth {
+.plant-growth {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px; /* Adjust the max-width based on your preference */
+    width: 100%;
+    margin: 0 auto;
+    order: 2;
 }
 
-#plantImage {
-    width: 100%; /* Make the image fill the container */
-    max-width: 400px; /* Set a maximum width for the image */
-    height: auto; /* Maintain aspect ratio */
+#plant-image {
+    width: 50%; 
+    height: auto; 
 }
 
-#totalPoints {
-    font-size: 18px; /* Adjust font size based on your preference */
-    margin-top: 10px; /* Add some spacing between the image and totalPoints */
+.plant-growth p {
+    font-size: 20px; 
+    margin-top: 10px; 
+    font-weight: 500;
 }
 
 button {
-    margin-top: 10px; /* Add some spacing between totalPoints and the button */
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #CCD5AE;
+    border: 2px solid #CCD5AE;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #588157;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.button:hover {
+    color: #CCD5AE;
+    background: #588157;
 }
