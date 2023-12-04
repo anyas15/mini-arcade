@@ -130,3 +130,10 @@ header {
     margin-top: 1rem;
     pointer-events: none;
 }
+
+.score {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+}
