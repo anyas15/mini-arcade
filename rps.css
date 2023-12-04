@@ -132,8 +132,13 @@ header {
 }
 
 .score {
-    position: absolute;
-    bottom: 10px;
+    position: fixed;
+    top: 20px;
     right: 10px;
-    font-size: 20px;
-}
+    font-size: 18px;
+    color: #000000;
+    background-color: #D4A373;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
