@@ -21,7 +21,7 @@ function playerMove() {
     this.textContent = mark;
     if (checkWinner()) {
       gameOver = true;
-      updateWinCount(mark);
+      updateTotalPoints(mark);
       return; // Exit the function early if the game is won
     }
     switchMark();
@@ -104,11 +104,11 @@ function buildGrid() {
   cells = Array.from(grid.getElementsByTagName('li'));
 }
 
-function updateWinCount(winnerMark) {
+function updateTotalPoints(winnerMark) {
   if (winnerMark === mark) {
     totalWins= totalWins+ 5;
   // Display the updated win count
-  document.getElementById('winCount').textContent = 'Total Wins: ' + totalWins;
+  document.getElementById('winCount').textContent = 'Total Points: ' + totalWins;
 }
 }
 var players = Array.from(document.querySelectorAll('input[name=player-choice]'));
