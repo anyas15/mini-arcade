@@ -1,9 +1,16 @@
 const cards = document.querySelectorAll(".card");
-const scoreDisplay = document.getElementById("points"); // Updated to use the "points" div
+const scoreDisplay = document.getElementById("points");
 let matched = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
-let points = 0;
+var points = parseInt(localStorage.getItem('totalPoints')) || 0;
+
+function initializeTotalPoints() {
+    updateAndStorePoints(points);
+}
+
+initializeTotalPoints();
+updateAndStorePoints(points);
 
 function flipCard({ target: clickedCard }) {
     if (cardOne !== clickedCard && !disableDeck) {
@@ -63,7 +70,21 @@ function shuffleCard() {
 function updateScore(amount) {
     points += amount;
     scoreDisplay.innerText = `Points: ${points}`;
+    updateAndStorePoints(points);
 }
+
+function updateTotalPoints(winnerMark) {
+    if (winnerMark === mark) {
+        points += 5;
+        updateAndStorePoints(points);
+    }
+}
+
+function updateAndStorePoints(points) {
+    localStorage.setItem('totalPoints', points);
+    document.getElementById('points').textContent = 'Total Points: ' + points;
+}
+
 
 shuffleCard();
 

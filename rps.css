@@ -131,7 +131,7 @@ header {
     pointer-events: none;
 }
 
-.score {
+.points {
     position: fixed;
     top: 20px;
     right: 10px;

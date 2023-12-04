@@ -4,11 +4,14 @@ const gameContainer = document.querySelector(".container"),
     result = document.querySelector(".result"),
     optionImages = document.querySelectorAll(".option_image");
 
-let userScore = 0;
+let points = parseInt(localStorage.getItem('totalPoints')) || 0;
 
-const updateScore = () => {
-    document.querySelector("#userScore").textContent = userScore; // Updated selector to match the HTML
-};
+function initializeTotalPoints() {
+    updateAndStorePoints(points);
+}
+
+initializeTotalPoints();
+updateAndStorePoints(points);
 
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
@@ -22,7 +25,7 @@ optionImages.forEach((image, index) => {
 
         gameContainer.classList.add("start");
 
-        let time = setTimeout(() => {
+        setTimeout(() => {
             gameContainer.classList.remove("start");
             let imageSrc = e.target.querySelector("img").src;
             userResult.src = imageSrc;
@@ -51,9 +54,14 @@ optionImages.forEach((image, index) => {
 
             // Update scores
             if (outComeValue === "Won") {
-                userScore += 5; // Add 5 points for a win
-                updateScore();
+                points += 5;
+                updateAndStorePoints(points);
             }
         }, 2500);
     });
 });
+
+function updateAndStorePoints(points) {
+    localStorage.setItem('totalPoints', points);
+    document.getElementById('points').textContent = 'Total Points: ' + points;
+}
