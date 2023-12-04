@@ -6,6 +6,10 @@ var cells;
 var gameOver = false;
 var totalWins = parseInt(localStorage.getItem('totalPoints')) || 0;;
 
+function initializeTotalPoints() {
+  updateAndStorePoints(totalWins);
+}
+
 // add click listener to radio buttons
 function setPlayer() {
   mark = this.value;
@@ -128,3 +132,4 @@ resetButton.addEventListener('click', function (e) {
   resetGrid();
 });
 
+initializeTotalPoints();
