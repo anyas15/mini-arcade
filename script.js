@@ -18,19 +18,28 @@ window.addEventListener('load', updateTotalPoints);
 function updatePlantImage() {
     const totalPoints = getTotalPoints();
     const plantImage = document.getElementById('plant-image');
+    const plantMessage = document.getElementById('plant-message');
 
     if (totalPoints >= 100) {
-        plantImage.src = 'images/plantgrow_5.png'; 
+        plantImage.src = 'images/plantgrow_5.png';
+        plantMessage.textContent = "Congratulations! Your plant is all grown up now. You can reset your points to grow another plant, or enjoy free play without worrying about points!";
     } else if (totalPoints >= 75) {
-        plantImage.src = 'images/plantgrow_4.png'; 
+        plantImage.src = 'images/plantgrow_4.png';
+        plantMessage.textContent = "Incredible! You've been treating this plant very well. Just a little more...";
     } else if (totalPoints >= 50) {
-        plantImage.src = 'images/plantgrow_3.png'; 
+        plantImage.src = 'images/plantgrow_3.png';
+        plantMessage.textContent = "This is some nice growth..."
     } else if (totalPoints >= 25) {
-        plantImage.src = 'images/plantgrow_2.png'; 
+        plantImage.src = 'images/plantgrow_2.png';
+        plantMessage.textContent = "Nice, you've reached the first growth stage! Keep going."
     } else {
-        plantImage.src = 'images/plantgrow_1.png'; 
+        plantImage.src = 'images/plantgrow_1.png';
+    }
+    if (totalPoints < 25) {
+        plantMessage.textContent = ""; 
     }
 }
+
 
 // grow the plant
 function levelUpPlant() {
