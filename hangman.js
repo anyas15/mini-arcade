@@ -7,6 +7,15 @@ const canvas = document.getElementById("canvas");
 const resultText = document.getElementById("result-text");
 const scoreDisplay = document.getElementById("points");
 
+var totalPoints = parseInt(localStorage.getItem('totalPoints')) || 0;
+
+function initializeTotalPoints() {
+    updateAndStorePoints(totalPoints);
+}
+
+initializeTotalPoints();
+updateAndStorePoints(totalPoints);
+
 let options = {
   fruits: [
     "Apple",
@@ -91,11 +100,11 @@ let winCount = 0;
 let count = 0;
 
 let chosenWord = "";
-let points = 0;
+let gamePoints = 0; // Rename to avoid conflict
 
 const playGame = (pointsEarned) => {
-  points += pointsEarned;
-  scoreDisplay.innerText = `Points: ${points}`;
+    gamePoints += pointsEarned;
+    scoreDisplay.innerText = `Points: ${gamePoints}`;
 };
 
 const displayOptions = () => {
@@ -262,6 +271,18 @@ const drawMan = (count) => {
       break;
   }
 };
+
+function updateTotalPoints(winnerMark) {
+  if (winnerMark === mark) {
+      totalPoints += 5;
+      updateAndStorePoints(totalPoints);
+  }
+}
+
+function updateAndStorePoints(points) {
+  localStorage.setItem('totalPoints', points);
+  document.getElementById('points').textContent = 'Points: ' + points;
+}
 
 newGameButton.addEventListener("click", initializer);
 window.onload = initializer;

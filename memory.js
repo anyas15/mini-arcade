@@ -82,7 +82,7 @@ function updateTotalPoints(winnerMark) {
 
 function updateAndStorePoints(points) {
     localStorage.setItem('totalPoints', points);
-    document.getElementById('points').textContent = 'Total Points: ' + points;
+    document.getElementById('points').textContent = 'Points: ' + points;
 }
 
 
