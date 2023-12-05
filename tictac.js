@@ -95,7 +95,7 @@ function resetGrid() {
   chooser.classList.remove('game-on');
   grid.innerHTML = '';
   gameOver = false;
-  document.getElementById('winCount').textContent = 'Total Points: ' + totalWins;
+  document.getElementById('points').textContent = 'Points: ' + totalWins;
 }
 
 // build the grid
@@ -118,7 +118,7 @@ function updateTotalPoints(winnerMark) {
 
 function updateAndStorePoints(points) {
     localStorage.setItem('totalPoints', points);
-    document.getElementById('winCount').textContent = 'Total Points: ' + points;
+    document.getElementById('points').textContent = 'Points: ' + points;
 }
 
 var players = Array.from(document.querySelectorAll('input[name=player-choice]'));

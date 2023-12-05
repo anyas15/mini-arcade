@@ -100,12 +100,7 @@ let winCount = 0;
 let count = 0;
 
 let chosenWord = "";
-let gamePoints = 0; // Rename to avoid conflict
-
-const playGame = (pointsEarned) => {
-    gamePoints += pointsEarned;
-    scoreDisplay.innerText = `Points: ${gamePoints}`;
-};
+let gamePoints = 0; 
 
 const displayOptions = () => {
   optionsContainer.innerHTML += `<h3>Please Select A Category</h3>`;
@@ -174,7 +169,7 @@ const initializer = () => {
             winCount += 1;
             if (winCount == charArray.length) {
               resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p><p>You have won 5 points!</p>`;
-              playGame(5);
+              updateTotalPoints(true);
               blocker();
             }
           }
@@ -184,6 +179,7 @@ const initializer = () => {
         drawMan(count);
         if (count == 6) {
           resultText.innerHTML = `<h2 class='lose-msg'>You Lose!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+          updateTotalPoints(false);
           blocker();
         }
       }
@@ -272,10 +268,10 @@ const drawMan = (count) => {
   }
 };
 
-function updateTotalPoints(winnerMark) {
-  if (winnerMark === mark) {
-      totalPoints += 5;
-      updateAndStorePoints(totalPoints);
+function updateTotalPoints(isWin) {
+  if (isWin) {
+    totalPoints += 5;
+    updateAndStorePoints(totalPoints);
   }
 }
 
