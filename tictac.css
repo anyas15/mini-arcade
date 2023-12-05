@@ -43,12 +43,25 @@
 .navbar a:hover, .navbar a.active {
     color: #D4A373;
 }
+
+.container {
+  width: 600px; /* Adjust the width based on your design */
+  max-width: 100%; /* Ensures the container doesn't exceed 100% of the viewport width */
+  margin: 0 auto;
+  padding: 2rem; /* Adjust padding as needed */
+  border-radius: 14px;
+  background: #faedcd;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
   h1 {
     font-family: "Poppins", sans-serif;
+    color:#D4A373
   }
   
   .message {
-    color: #FEFAE0;
+    color: #D4A373;
     font-size: 1.5em;
     padding-bottom: 1em;
   }
@@ -62,6 +75,7 @@
   form label {
       font-size: 4em;
       font-weight: bold;
+      color: #D4A373;
       vertical-align: middle;
     }
     form input[type=radio] {
@@ -72,6 +86,13 @@
       display: block;
       opacity: 1;
       transition: all ease 1s;  
+      border: 2px solid #D4A373;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      width: 70%;
+      margin: 0 auto;
     }
     form.game-on fieldset {
       opacity: 0;
@@ -95,7 +116,7 @@
   }
   
   li {
-    border: 1px solid #000;
+    border: 2px solid #D4A373;
     width: 33.3333%;
     height: 100px;
   vertical-align: middle;
@@ -124,27 +145,45 @@
   }
   
   .winner {
-    color: #FEFAE0;
+    color: #D4A373;
   }
   
   .btn-primary, 
   .btn-primary:focus {
-    background-color: #FAEDCD;
-    opacity: 0;
-    outline: 0;  
-    transition: all ease .3s;
-  }
-  
-  .btn-primary:hover {
-    background-color: #D4A373;
-  }
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #CCD5AE;
+    border: 2px solid #CCD5AE;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #588157;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-primary:hover {
+    color: #CCD5AE;
+    background: #588157;
+}
+
+.hidden {
+  display: none;
+}
   
   .points {
     position: fixed;
     top: 20px;
     right: 10px;
     font-size: 18px;
-    color: #000000;
+    color: #FAEDCD;
     background-color: #D4A373;
     padding: 8px;
     border-radius: 5px;

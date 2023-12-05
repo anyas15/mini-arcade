@@ -5,6 +5,7 @@ var mark;
 var cells;
 var gameOver = false;
 var totalWins = parseInt(localStorage.getItem('totalPoints')) || 0;;
+var resetButton;
 
 function initializeTotalPoints() {
   updateAndStorePoints(totalWins);
@@ -29,7 +30,7 @@ function playerMove() {
       return; // exit function early if the game is won
     }
     switchMark();
-    computerMove();
+    setTimeout(computerMove, 200);
   }
 }
 
@@ -86,6 +87,11 @@ function checkRow(id1, id2, id3) {
 
 // clear the grid
 function resetGrid() {
+  var resetButton = document.getElementById('reset');
+  resetButton.classList.add('hidden');
+
+  // Remove focus from the button
+  resetButton.blur();
   mark = 'X';
   cells.forEach(function (cell) {
       cell.textContent = '';
@@ -98,6 +104,8 @@ function resetGrid() {
   document.getElementById('points').textContent = 'Points: ' + totalWins;
 }
 
+
+
 // build the grid
 function buildGrid() {
   for (var i = 1; i <= 9; i++) {
@@ -107,6 +115,9 @@ function buildGrid() {
     grid.appendChild(cell);
   }
   cells = Array.from(grid.getElementsByTagName('li'));
+  resetButton.addEventListener('click', resetGrid, false);
+  resetButton.classList.remove('hidden');
+  gameOver = false;
 }
 
 function updateTotalPoints(winnerMark) {

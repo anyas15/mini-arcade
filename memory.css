@@ -42,7 +42,7 @@ header {
 .wrapper{
   padding: 25px;
   border-radius: 10px;
-  background: #fff;
+  background: #FAEDCD;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .cards, .card, .view{
@@ -91,10 +91,10 @@ header {
   height: 100%;
   position: absolute;
   border-radius: 7px;
-  background: #fff;
+  background: #FAEDCD;
   pointer-events: none;
   backface-visibility: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px #D4A373;
   transition: transform 0.25s linear;
 }
 .card .front-view img{
@@ -144,7 +144,7 @@ header {
   top: 20px;
   right: 10px;
   font-size: 18px;
-  color: #000000;
+  color: #FAEDCD;
   background-color: #D4A373;
   padding: 8px;
   border-radius: 5px;

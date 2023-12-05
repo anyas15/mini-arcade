@@ -59,11 +59,17 @@ header {
 #options-container button {
   font-size: 20px;
   padding: 0.6em 1.2em;
-  border: 3px solid #000000;
-  background-color: #ffffff;
-  color: #000000;
+  border: 3px solid #D4A373;
+  background-color: #D4A373;
+  color: #FAEDCD;
   border-radius: 0.3em;
   text-transform: capitalize;
+  transition: .5s;
+}
+#options-container button:hover {
+  color: #588157;
+  background: #CCD5AE;
+  border: #588157;
 }
 #options-container button:disabled {
   border: 3px solid #808080;
@@ -71,9 +77,9 @@ header {
   background-color: #FAEDCD;
 }
 #options-container button.active {
-  background-color: #D4A373;
-  border: 3px solid #000000;
-  color: #000000;
+  background-color: #588157;
+  border: 3px solid #CCD5AE;
+  color: #FAEDCD;
 }
 .letter-container {
   width: 100%;
@@ -87,7 +93,7 @@ header {
   height: 3.4em;
   width: 3.4em;
   border-radius: 0.3em;
-  background-color: #ffffff;
+  background-color: #FAEDCD;
 }
 .new-game-popup {
   background-color: #FAEDCD;
@@ -132,15 +138,15 @@ canvas {
   font-size: 1.25em;
   padding: 0.5em 1em;
   background-color: #D4A373;
-  border: 3px solid #000000;
-  color: #000000;
+  border: 3px solid #FAEDCD;
+  color: #D4A373;
   border-radius: 0.2em;
 }
 .win-msg {
   color: #0a6138;
 }
 .lose-msg {
-  color: #802525;
+  color: #D4A373;
 }
 
 .points {
@@ -148,7 +154,7 @@ canvas {
   top: 20px;
   right: 10px;
   font-size: 20px;
-  color: #000000;
+  color: #FAEDCD;
   background-color: #D4A373;
   padding: 8px;
   border-radius: 5px;
