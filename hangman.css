@@ -138,10 +138,18 @@ canvas {
   font-size: 1.25em;
   padding: 0.5em 1em;
   background-color: #D4A373;
-  border: 3px solid #FAEDCD;
-  color: #D4A373;
+  border: 3px solid #D4A373;
+  color: #FAEDCD; /* Change the text color */
   border-radius: 0.2em;
+  transition: .5s;
 }
+
+#new-game-button:hover {
+  color: #D4A373; /* Change the text color on hover */
+  background: #FAEDCD;
+  border: 3px solid #D4A373;
+}
+
 .win-msg {
   color: #0a6138;
 }
